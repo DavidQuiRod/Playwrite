@@ -67,7 +67,7 @@ test('Browser Context Playwright test', async ({browser})=>
             console.log('Texto de prueba');
             console.log('Texto obtenido del cuadro de username: '+ textoObtenido);
         })
-    test.only('Child window handled', async({browser})=>
+    test('Child window handled', async({browser})=>
     {
         const context= await browser.newContext();
         const page= await context.newPage();

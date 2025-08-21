@@ -1,6 +1,7 @@
 // @ts-check
 //import { defineConfig, devices } from '@playwright/test';
 import { defineConfig,devices } from "@playwright/test";
+import { trace } from "console";
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -20,7 +21,9 @@ const config={
         browserName : 'chromium',
         headless : false, /*Si esta variable es true se ejecuta backend y si es false se ejecuta con navegadores, con lo cual solo se ocuparia el comando "npx playwright test" en caso de que no este es con la otra sentencia npx playwright test --headed*/
         screenshot:'on',/*Variable para que te tome captura de pantalla a los pasos de los casos de prueba */
-        trace:'on' /*varibale para rastrear los pasos para ver donde falla el caso de prueba */
+        trace:'on'
+        //trace:'retain-on-failure' /*varibale para rastrear los pasos para ver donde falla el caso de prueba */
+        /*otra forma de utilizar el ratreo es especificando solo los que fallan con retain-on-failure */
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     /*trace: 'on-first-retry', se comenta sentencia para que se pueda ejecutar con la variable headless c*/
   },
