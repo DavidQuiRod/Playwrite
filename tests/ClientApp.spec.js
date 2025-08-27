@@ -95,7 +95,7 @@ test('Practica 2 del curso con un caso de End to End con playwright', async ({ b
 });
 
 //Caso de prueba dinamico()
-test.only('Practica 2 del curso codigo del curso', async ({ browser }) => {
+test('Practica 2 del curso codigo del curso', async ({ browser }) => {
     const email = 'brigael.bmp@gmail.com';
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -170,8 +170,7 @@ test.only('Practica 2 del curso codigo del curso', async ({ browser }) => {
    }
    const orderIdDetails = await page.locator(".col-text").textContent();
    expect(orderId.includes(orderIdDetails)).toBeTruthy();
-
-
+   //await page.pause();
 
 });
 

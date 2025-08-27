@@ -1,0 +1,40 @@
+Nota principal:
+Si por error elimina los valores de node_modules hay que volver a ejecutar el codigo
+npm init playwright
+npm init playwright
+Links de documentacion dados por el curso de playwright
+https://playwright.dev/docs/actionability
+https://playwright.dev/docs/test-timeouts
+
+URL de las practicas del curso
+rahulshettyacademy.com/loginpagePractise/
+https://rahulshettyacademy.com/client/#/auth/login
+https://rahulshettyacademy.com/angularpractice/
+
+Comandos para ejecutar tu escript
+npx playwright test  <- lo ejecuta directo a backend sin nosotros ver el navegador interactuar
+npx playwright test --headed  <- lo ejecuta desde el front end donde visaulizamos nosotros los pasos que declaremos
+npx playwright test llc --ui <-- ejecutamos un caso con el nombre del archivo donde se localiza y vemos la interfaz de usuario con el comando --ui
+headless : false /*Si esta variable es true se ejecuta backend y si es false se ejecuta con navegadores, con lo cual solo se ocuparia el comando "npx playwright test" en caso de que no este es con la otra sentencia npx playwright test --headed*/
+
+para solo ejecutar una prueba de un archivo se puede hacer agregador el codigo test.only
+para poder ejecutar el debbuger en playwright se ocupa el comando npx playwright test --debug
+npx playwright test ./tests/UIBasicstecs.spec.js
+npc playwright test --debug
+npx playwright test ClientApp.spec.js --debug
+
+Para hacer escenario rapidos en playwright puedes utilizar el comando
+npx playwright codegen //Pagina que deseas
+Esto te ayuda a crear casos de pruebas simples pero hay que saber manejarlo y entenderlo ya que esto no simpre funciona cuando se trata de procesos mas complejos y logicos
+
+Formas de encontrar etiquetas HTML y que funcionen para playwright
+If Id is present
+css -> tagname#id (or) #id
+
+If class attribute is present
+css -> [attribute='value']
+
+Write Css with traversing from Parent to child
+css -> parentTagname >> childTagname
+
+If needs to write the locator based on text
