@@ -7,9 +7,11 @@ https://playwright.dev/docs/actionability
 https://playwright.dev/docs/test-timeouts
 
 URL de las practicas del curso
-rahulshettyacademy.com/loginpagePractise/
-https://rahulshettyacademy.com/client/#/auth/login
-https://rahulshettyacademy.com/angularpractice/
+rahulshettyacademy.com/loginpagePractise/  <- primeros pasos
+https://rahulshettyacademy.com/client/#/auth/login   <-- Login
+https://rahulshettyacademy.com/angularpractice/  <-- angular session con los localizadores especiales
+https://rahulshettyacademy.com/seleniumPractise/#/  <-- como manejar un calendario y validar que sean los valores que esperamos
+https://rahulshettyacademy.com/AutomationPractice/  <-- hide and show
 
 Comandos para ejecutar tu escript
 npx playwright test  <- lo ejecuta directo a backend sin nosotros ver el navegador interactuar
