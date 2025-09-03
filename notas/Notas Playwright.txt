@@ -40,3 +40,6 @@ Write Css with traversing from Parent to child
 css -> parentTagname >> childTagname
 
 If needs to write the locator based on text
+
+
+//Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OGEzNTU3YTZmNTg1ZWI2MGQ4MjQ3M2UiLCJ1c2VyRW1haWwiOiJicmlnYWVsLmJtcEBnbWFpbC5jb20iLCJ1c2VyTW9iaWxlIjozMTQxMTYwNzgxLCJ1c2VyUm9sZSI6ImN1c3RvbWVyIiwiaWF0IjoxNzU2NDc1Mjk5LCJleHAiOjE3ODgwMzI4OTl9.ne-d0SXDEJkZzcA4oPfJDAhW6DT9yvHU34Q7EWcBepQ
