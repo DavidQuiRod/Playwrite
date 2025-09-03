@@ -2,6 +2,7 @@ const { test, expect, request } = require('@playwright/test');
 //para obtener el cuerpo de la solicitud podemos revisar en network y en el apartado de payload para obtener el cuerpo de la solicitud
 //lo mismo aplica para la respuesta del api podemos revisar en el response
 const loginPayLoad = { "userEmail": "brigael.bmp@gmail.com", "userPassword": "Practica12345" }
+const orderPayload={orders: [{country: "Mexico", productOrderedId: "68a961959320a140fe1ca57e"}]}
 let token; //Se declara la variable global token para almacenar el valor que nos va a regresar como respuesta la api
 test.beforeAll(async () => {  //Este es un test como antes de comensar has lo que este dentro de esto
     const apiContext = await request.newContext(); //Creamos una nueva variable para poder generar un request(solicitud al api)
@@ -9,11 +10,20 @@ test.beforeAll(async () => {  //Este es un test como antes de comensar has lo qu
     const loginResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login", //mandamos la solicitud a la url que obtenemos del navegador
         { //agregamos el Body(cuerpo) de la solicitud
             data: loginPayLoad
-         }    )
+         }    );
          expect(loginResponse.ok()).toBeTruthy(); //Esperamos que sea una respuesta del rango de 200 al 299 En caso de ser otro codigo marca error
          const loginResponJson=await loginResponse.json(); //obtenemos la respuesta del aplicativo en formato JSON
          token= loginResponJson.token; //cuando revisamos la respuesta del api podemos obtener los valores con la opcion de los atributos de regreso
          console.log(token); //imprimimos el token para ver lo que nos trae
+
+         const orderResponse= await apiContext.post("https://rahulshettyacademy.com/api/ecom/order/create-order",{
+            data:orderPayload,
+            headers:{
+                'Authorization':token,
+                'Content-Type': 'application/json'
+            },
+         })
+
 });
 
 test.beforeEach(() => {
